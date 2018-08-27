@@ -63,14 +63,16 @@ const Spotify = {
             if (jsonResponse.id) {
                 userID = jsonResponse.id;
             }
+            //console.log(userID);
         }).then(
+            //console.log(userID);
             fetch(`https://api.spotify.com/v1/users/${userID}/playlists`, 
             {
                 headers: headers,
                 method: 'POST',
                 body: JSON.stringify(
                 {
-                    "name": `${playlistName}`,
+                    "name": playlistName,
                     "description": "New playlist description",
                     "public": true
                 }
@@ -81,6 +83,7 @@ const Spotify = {
                 if(jsonResponse.id) {
                     playlistID = jsonResponse.id;
                 }
+                //console.log(playlistID);
             })
         ).then(
             fetch(`https://api.spotify.com/v1/playlists/${playlistID}/tracks`,
@@ -89,7 +92,7 @@ const Spotify = {
                 method: 'POST',
                 body: JSON.stringify(
                 {
-                    "uris": `${trackURIs}`
+                    "uris": trackURIs
                 }
                 )
             }).then(response => {
