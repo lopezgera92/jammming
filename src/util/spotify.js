@@ -66,7 +66,7 @@ const Spotify = {
             //console.log(userID);
         }).then(
             //console.log(userID);
-            fetch(`https://api.spotify.com/v1/users/${userID}/playlists`, 
+            fetch(`https://api.spotify.com/v1/users/user_id=${userID}/playlists`, 
             {
                 headers: headers,
                 method: 'POST',
@@ -78,6 +78,7 @@ const Spotify = {
                 }
                 )   
             }).then(response => {
+                console.log(response.json());
                 return response.json();
             }).then(jsonResponse => {
                 if(jsonResponse.id) {
@@ -86,7 +87,7 @@ const Spotify = {
                 //console.log(playlistID);
             })
         ).then(
-            fetch(`https://api.spotify.com/v1/playlists/${playlistID}/tracks`,
+            fetch(`https://api.spotify.com/v1/playlists/playlist_id=${playlistID}/tracks`,
             {
                 headers: headers,
                 method: 'POST',
@@ -96,6 +97,7 @@ const Spotify = {
                 }
                 )
             }).then(response => {
+                console.log(response.json());
                 return response.json();
             }).then(jsonResponse => {
                 if(jsonResponse.id) {
