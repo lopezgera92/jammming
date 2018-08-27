@@ -42,7 +42,11 @@ class App extends React.Component {
   }
 
   savePlaylist() {
-    Spotify.savePlaylist(this.state.playlistName, this.state.playlistTracks);
+    let trackURIs = [];
+    while(this.state.playlistTracks) {
+      trackURIs.push(this.state.playlistTracks.track.uri);
+    }
+    Spotify.savePlaylist(this.state.playlistName, trackURIs);
     this.setState({
       playlistName: 'New Playlist',
       playlistTracks: []
