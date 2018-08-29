@@ -8,6 +8,7 @@ import Spotify from '../../util/spotify';
 class App extends React.Component {
   constructor(props) {
     super(props);
+
     this.addTrack = this.addTrack.bind(this);
     this.removeTrack = this.removeTrack.bind(this);
     this.updatePlaylistName = this.updatePlaylistName.bind(this);
@@ -40,8 +41,8 @@ class App extends React.Component {
 
   savePlaylist() {
     let trackURIs = this.state.playlistTracks.map(track => track.uri);
-    //console.log(trackURIs);
     Spotify.savePlaylist(this.state.playlistName, trackURIs);
+    
     this.setState({
       playlistName: 'New Playlist',
       playlistTracks: []
