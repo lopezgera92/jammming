@@ -1,4 +1,4 @@
-const clientID = '<Insert Client ID HERE>';
+const clientID = 'c4b1c8c17acb4680acd2aadc2e3cd540';
 const redURI = 'http://localhost:3000/';
 let accessToken = '';
 let expiresIn = '';
