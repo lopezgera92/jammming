@@ -24,7 +24,7 @@ class SearchBar extends React.Component {
    
     // Listens for enter key press. Inititates search of Spotify library
     handleKeyPress(event) {
-        if(event.key == 'Enter') {
+        if(event.key === 'Enter') {
             this.props.onSearch(this.state.term);
         }
     }
