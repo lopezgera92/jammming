@@ -4,6 +4,7 @@ let accessToken = '';
 let expiresIn = '';
 
 const Spotify = {
+    // Checks if user has logged into Spotify account, if not redirects to authorization page
     getAccessToken() {
         if(accessToken) {
             return accessToken;
@@ -26,6 +27,7 @@ const Spotify = {
         }
     },
 
+    // Searches Spotify library
     search(q) {
         accessToken = Spotify.getAccessToken();
 
@@ -49,6 +51,7 @@ const Spotify = {
         }); 
     },
 
+    // Saves playlist to users Spotify account
     savePlaylist(playlistName,trackURIs) {
         let accessToken = Spotify.getAccessToken();
         let userID = '';

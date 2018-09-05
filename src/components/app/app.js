@@ -22,6 +22,7 @@ class App extends React.Component {
     };
   }
 
+  // If track isn't already in playlist, adds track to playlist array
   addTrack(track) {
     if (this.state.playlistTracks.find(savedTrack => savedTrack.id === track.id)) {
       return;
@@ -30,15 +31,18 @@ class App extends React.Component {
     this.setState({playlistTracks: this.state.playlistTracks}); 
   }
   
+  // Removes track from playlist array
   removeTrack(track) {
     const updatedPlaylist = this.state.playlistTracks.filter(savedTrack => savedTrack.id !== track.id);
     this.setState({playlistTracks: updatedPlaylist});
   }
 
+  // Sets name of playlist
   updatePlaylistName(name) {
     this.setState({playlistName: name});
   }
 
+  // Saves playlist to spotify account and resets state
   savePlaylist() {
     let trackURIs = this.state.playlistTracks.map(track => track.uri);
     Spotify.savePlaylist(this.state.playlistName, trackURIs);
@@ -49,6 +53,7 @@ class App extends React.Component {
     });
   }
 
+  // Searches spotify library 
   search(term) {
     Spotify.search(term).then(searchResults => {
       this.setState({searchResults : searchResults});

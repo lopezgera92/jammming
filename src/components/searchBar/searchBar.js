@@ -11,15 +11,18 @@ class SearchBar extends React.Component {
 
         this.state = {term: ''};
     }
-    
+   
+    // Searches Spotify library
     search() {
         this.props.onSearch(this.state.term);
     }
 
+    // Sets name of playlist
     handleTermChange(event) {
         this.setState({term: event.target.value});
     }
    
+    // Listens for enter key press. Inititates search of Spotify library
     handleKeyPress(event) {
         if(event.key == 'Enter') {
             this.props.onSearch(this.state.term);

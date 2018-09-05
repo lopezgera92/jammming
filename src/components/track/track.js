@@ -8,7 +8,8 @@ class Track extends React.Component {
         this.addTrack = this.addTrack.bind(this);
         this.removeTrack = this.removeTrack.bind(this);
     }
-    
+   
+    // Provides correct action button. Add or remove track
     renderAction() {
         if(this.props.isRemoval) {
             return (<a className="Track-action" onClick={this.removeTrack}> - </a>);
@@ -16,10 +17,12 @@ class Track extends React.Component {
         return (<a className="Track-action" onClick={this.addTrack}> + </a>);
     }
    
+    // Adds track to playlist
     addTrack() {
         this.props.onAdd(this.props.track);
     }
 
+    // Removes track from playlist
     removeTrack() {
         this.props.onRemove(this.props.track);
     }
