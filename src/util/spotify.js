@@ -15,7 +15,7 @@ const Spotify = {
             const regexFound1 = url.match(/access_token=([^&]*)/);
             const regexFound2 = url.match(/expires_in=([^&]*)/);
             accessToken = regexFound1[1];
-            expiresIn = regexFound2[1];
+            expiresIn = Number(regexFound2[1]);
 
             window.setTimeout(() => accessToken = '', expiresIn * 1000);
             window.history.pushState('Access Token', null, '/');
@@ -29,8 +29,8 @@ const Spotify = {
 
     // Searches Spotify library
     search(q) {
-        accessToken = Spotify.getAccessToken();
-
+        let accessToken = Spotify.getAccessToken();
+        
         return fetch(`https://api.spotify.com/v1/search?type=track&q=${q}`,
         {
             headers: {Authorization: `Bearer ${accessToken}`}
@@ -48,7 +48,7 @@ const Spotify = {
                     uri: track.uri
                 }));
             }
-        }); 
+        });   
     },
 
     // Saves playlist to users Spotify account
