@@ -29,6 +29,7 @@ class SearchBar extends React.Component {
         }
     }
 
+    // Renders the input box to search for music
     render() {
         return (
             <div className="SearchBar">

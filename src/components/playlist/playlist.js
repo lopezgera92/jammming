@@ -13,6 +13,7 @@ class Playlist extends React.Component {
         this.props.onNameChange(event.target.value);
     }
     
+    // Renders the tracks added to the playlist queue
     render() {
         return (
             <div className="Playlist">

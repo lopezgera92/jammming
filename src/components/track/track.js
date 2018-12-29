@@ -27,6 +27,7 @@ class Track extends React.Component {
         this.props.onRemove(this.props.track);
     }
 
+    // Renders the individual tracks that will be displayed in the search results and playlist queue
     render() {
         return (
             <div className="Track">

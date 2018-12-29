@@ -3,6 +3,7 @@ import Track from '../track/track';
 import './trackList.css'
 
 class TrackList extends React.Component {
+    // Renders the collection of tracks returned in the search results and playlist queue
     render () {
         return (
             <div className="TrackList">

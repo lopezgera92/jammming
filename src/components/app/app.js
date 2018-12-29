@@ -60,6 +60,7 @@ class App extends React.Component {
     });
   }
 
+  // Renders the three functional sections of the application
   render() {
     return (
       <div>
