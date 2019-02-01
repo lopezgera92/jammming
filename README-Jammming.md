@@ -3,13 +3,6 @@ Jammming is a web application built using the React framework. It allows users t
 
 A user can type the name of a song, artist, or album into the search bar and click the SEARCH button to request song data from the Spotify library. Jammming then displays a list of returned tracks from the users query. Tracks can be added or removed by clicking the (+) and (-) buttons, respectively. Users also have the ability to change the name of the playlist to something of their choice before clicking the SAVE TO SPOTIFY button.
 
-![Static Application](/Users/Gera/Desktop/Screen\ Shot\ 2019-01-31\ at\ 4.58.18\ PM.png)
-Format: ![Alt Text](url)
-
-![Dynamic Application](/Users/Gera/Desktop/Screen\ Shot\ 2019-01-31\ at\ 5.00.17\ PM.png)
-Format: ![Alt Text](url)
-
-
 
 ### Prerequisites
 * [Node.js](https://nodejs.org/en/) - The runtime environment used
