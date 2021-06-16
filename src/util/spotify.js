@@ -1,5 +1,5 @@
 const clientID = 'c4b1c8c17acb4680acd2aadc2e3cd540';
-const redURI = 'http://localhost:3000/';
+const redURI = 'https://lopezgera92.github.io/jammming/';
 let accessToken = '';
 let expiresIn = '';
 
@@ -12,10 +12,10 @@ const Spotify = {
         
         const url = window.location.href;
         if(url.match(/access_token=([^&]*)/) && url.match(/expires_in=([^&]*)/)) {
-            const regexFound1 = url.match(/access_token=([^&]*)/);
-            const regexFound2 = url.match(/expires_in=([^&]*)/);
-            accessToken = regexFound1[1];
-            expiresIn = Number(regexFound2[1]);
+            const accessTokenFromUrl = url.match(/access_token=([^&]*)/);
+            const expiresInFromUrl = url.match(/expires_in=([^&]*)/);
+            accessToken = accessTokenFromUrl[1];
+            expiresIn = Number(expiresInFromUrl[1]);
 
             window.setTimeout(() => accessToken = '', expiresIn * 1000);
             window.history.pushState('Access Token', null, '/');
